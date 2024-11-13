@@ -6,7 +6,7 @@ public class CssXpathExamples {
     void cssXpathExamples() {
         // <input type="email" class="inputtext login_form_input_box" name="email" id="email" data-testid="email">
         $("[data-testid=email]").setValue("1");
-        $(by("data-testid", "email")).setValue("1"); // альтернативный вариант
+        $(by("data-testid", "email")).setValue("1");
 
         // <input type="email" class="inputtext login_form_input_box" name="email" id="email">
         $("[id=email]").setValue("1");
