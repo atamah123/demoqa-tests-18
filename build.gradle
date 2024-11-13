@@ -25,3 +25,5 @@ test {
     useJUnitPlatform()
 } // пока не известно
 */
+
+// test
