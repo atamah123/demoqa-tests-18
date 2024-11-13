@@ -17,6 +17,8 @@ public class TextBox {
 
     @Test
     void fillFormTest() {
+
+        
             open("/text-box");
             $("[id =userName]").setValue("Alex Egorov");
 //        $("#userName").setValue("Alex Egorov"); // аналогичный вариант
