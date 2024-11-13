@@ -9,8 +9,8 @@ repositories {
 dependencies {
     testImplementation (
 
-          /*  "com.codeborne:selenide:6.19.1",
-            "org.junit.jupiter:junit-jupiter:5.9.3"*/
+          /*  "com.codeborne:selenide:6.19.1",*/
+            "org.junit.jupiter:junit-jupiter:5.9.3"
     )
 
 } // если сверху, грубо говоря, адрес www.maven.com (условно), то этот код - полка, с которй
@@ -20,10 +20,11 @@ dependencies {
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 } // исправляет проблемы с кириллицей
+*/
 
 test {
     useJUnitPlatform()
-} // пока не известно
-*/
+} // указывает, что использовать будем пятую версию JUnit
 
-// test
+
+
