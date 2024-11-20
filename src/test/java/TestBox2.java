@@ -7,8 +7,7 @@ import org.openqa.selenium.Keys;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 public class TestBox2 {
 
@@ -25,6 +24,9 @@ public class TestBox2 {
     @Test
     void male() {
         open("/automation-practice-form");
+
+        for(int i =0; i<5; i++);
+        actions().moveToElement($("div")).sendKeys(Keys.chord(Keys.CONTROL, "-")).perform();
 
         $("#firstName").setValue("Alex");
         $("#lastName").setValue("Egorov");
@@ -73,8 +75,9 @@ public class TestBox2 {
 
 //        for(int i = 0; i < 4; i++)
 //            $(By.tagName("body")).press(Keys.PAGE_DOWN);
-        $("#closeLargeModal").pressEnter();
+//        $("#closeLargeModal").pressEnter();
 
+        sleep(30000);
     }
 
 
