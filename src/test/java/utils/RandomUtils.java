@@ -1,6 +1,6 @@
 package utils;
 
-//import com.github.javafaker.Faker;
+import com.github.javafaker.Faker;
 
 import java.security.SecureRandom;
 import java.util.concurrent.ThreadLocalRandom;
@@ -56,7 +56,7 @@ public class RandomUtils {
         return sb.toString();
     }
 
-//    public static String getRandomName() {
-//        return new Faker().name().firstName();
-//    }
+    public static String getRandomFirstName() {
+        return new Faker().name().firstName();
+    }
 }

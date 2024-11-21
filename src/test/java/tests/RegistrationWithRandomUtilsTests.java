@@ -17,7 +17,7 @@ public class RegistrationWithRandomUtilsTests {
 
     @Test
     void successfulRegistrationTest() {
-        String userFirstName = getRandomString(10),
+        String userFirstName = getRandomFirstName(),
                 userLastName = getRandomString(9),
                 userEmail = getRandomEmail(),
                 gender = getRandomGender(),
