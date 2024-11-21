@@ -16,4 +16,9 @@ public class RegistrationResultsModal {
                 .shouldHave(text(value));
     }
 
+    public void verifyResults(String key, String value1, String value2) {
+        $(".table-responsive").$(byText(key)).parent()
+                .shouldHave(text(value1 + ", " + value2));
+    }
+
 }

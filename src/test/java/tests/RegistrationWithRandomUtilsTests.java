@@ -5,10 +5,10 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
-import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.sleep;
+import static utils.RandomUtils.*;
 
-public class RegistrationWithPageObjectsTest {
+public class RegistrationWithRandomUtilsTests {
 
     @BeforeAll
     static void beforeAll() {
@@ -17,11 +17,11 @@ public class RegistrationWithPageObjectsTest {
 
     @Test
     void successfulRegistrationTest() {
-        String userFirstName = "Alex",
-                userLastName = "Egorov",
-                userEmail = "ae@mail.ru",
-                gender = "Male",
-                phone = "1234567890",
+        String userFirstName = getRandomString(10),
+                userLastName = getRandomString(9),
+                userEmail = getRandomEmail(),
+                gender = getRandomGender(),
+                phone = getRandomPhoneNumber(10),
                 dateDay = "30", dateMonth = "July", dateYear = "2008",
                 subject1 = "Maths", subject2 = "English",
                 hobbies1 = "Sports", hobbies2 = "Music",

@@ -117,4 +117,8 @@ public class RegistrationPage {
         return this;
     }
 
+    public RegistrationPage verifyResults(String key, String value1, String value2) {
+        registrationResultsModal.verifyResults(key, value1, value2);
+        return this;
+    }
 }
