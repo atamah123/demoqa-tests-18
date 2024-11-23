@@ -12,13 +12,14 @@ public class RegistrationPage {
     private CalendarComponent calendarComponent = new CalendarComponent();
     private RegistrationResultsModal registrationResultsModal = new RegistrationResultsModal();
     private final String TITLE_TEXT = "Student Registration Form";
-    private SelenideElement lastNameInput = $("#lastName"),
+    private final SelenideElement lastNameInput = $("#lastName"),
             firstNameInput = $("#firstName"),
             emailInput = $("#userEmail"),
             genderBox = $("#genterWrapper"),
             number = $("#userNumber"),
             subject = $("#subjectsInput"),
             hobbie = $("#hobbiesWrapper"),
+            picture = $("#uploadPicture"),
             address = $("#currentAddress"),
             state = $("#state"),
             city = $("#city");
@@ -72,6 +73,11 @@ public class RegistrationPage {
     public RegistrationPage setHobbies(String value) {
         hobbie.$(byText(value))
                 .click();
+        return this;
+    }
+
+    public RegistrationPage uploadPicture(String value) {
+        picture.uploadFromClasspath(value);
         return this;
     }
 

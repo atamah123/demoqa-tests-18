@@ -18,14 +18,18 @@ public class RegistrationWithRandomUtilsTests {
     @Test
     void successfulRegistrationTest() {
         String userFirstName = getRandomFirstName(),
-                userLastName = getRandomString(9),
-                userEmail = getRandomEmail(),
+                userLastName = getRandomLastName(),
+                userEmail = getRandomEmail(
+                        userFirstName + userLastName),
                 gender = getRandomGender(),
                 phone = getRandomPhoneNumber(10),
-                dateDay = "30", dateMonth = "July", dateYear = "2008",
-                subject1 = "Maths", subject2 = "English",
+                dayOfBerth = getRandomDay(),
+                monthOfBerth = getRandomMonth(),
+                yearOfBerth = getRandomYear(),
+                subject1 = getRandomSubject(), subject2 = getRandomSubject(),
                 hobbies1 = "Sports", hobbies2 = "Music",
-                address = "Some address 1",
+                pictureName = "1.png",
+                address = getRandomAddress(),
                 state = "NCR",
                 city = "Delhi";
 
@@ -38,14 +42,13 @@ public class RegistrationWithRandomUtilsTests {
                 .setEmail(userEmail)
                 .setGender(gender)
                 .setPhone(phone)
-                .setBirthDate(dateDay,dateMonth,dateYear)
+                .setBirthDate(dayOfBerth,monthOfBerth,yearOfBerth)
                 .setSubject(subject1).setSubject(subject2)
                 .setHobbies(hobbies1).setHobbies(hobbies2)
+                .uploadPicture(pictureName)
                 .setAddress(address)
                 .setStateAndCity(state, city)
                 .submit();
-
-//        $("#uploadPicture").uploadFromClasspath("img/1.png");
 
 
 
@@ -54,13 +57,14 @@ public class RegistrationWithRandomUtilsTests {
                 .verifyResult("Student Email", userEmail)
                 .verifyResult("Mobile", phone)
                 .verifyResult("Gender", gender)
-                .verifyResult("Date of Birth", dateDay
-                        + " " + dateMonth + "," + dateYear)
+                .verifyResult("Date of Birth", dayOfBerth
+                        + " " + monthOfBerth + "," + yearOfBerth)
                 .verifyResults("Subjects", subject1, subject2)
-                .verifyResult("Hobbies", hobbies1 + ", " +hobbies2)
+                .verifyResults("Hobbies", hobbies1, hobbies2)
+                .verifyResult("Picture", pictureName)
                 .verifyResult("Address", address)
                 .verifyResult("State and City", state + " " + city);
 
-        sleep(3000);
+        sleep(2000);
     }
 }

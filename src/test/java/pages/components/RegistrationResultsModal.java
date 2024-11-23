@@ -16,9 +16,15 @@ public class RegistrationResultsModal {
                 .shouldHave(text(value));
     }
 
-    public void verifyResults(String key, String value1, String value2) {
+    public void verifyResults(String key, String ... array) {
+        StringBuilder sb = new StringBuilder();
+        sb.append(array[0]);
+        for(int i = 1; i < array.length - 1; i++){
+            sb.append(", " + array[i]);
+        }
         $(".table-responsive").$(byText(key)).parent()
-                .shouldHave(text(value1 + ", " + value2));
+                .shouldHave(text(sb.toString()));
+        System.out.println(sb.toString());
     }
 
 }
